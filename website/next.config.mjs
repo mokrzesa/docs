@@ -1,6 +1,8 @@
 import mdx from '@next/mdx'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
+import remarkLint from 'remark-lint'
+import remarkLintFirstHeadingLevel from 'remark-lint-first-heading-level'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
 import { remarkMdxLayout } from './lib/remarkMdxLayout.mjs'
@@ -16,7 +18,14 @@ const env = {
 const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm, remarkFrontmatter, [remarkMdxFrontmatter, { name: 'frontmatter' }], remarkMdxLayout],
+    remarkPlugins: [
+      remarkGfm,
+      remarkFrontmatter,
+      [remarkMdxFrontmatter, { name: 'frontmatter' }],
+      remarkMdxLayout,
+      remarkLint,
+      [remarkLintFirstHeadingLevel, { number: 2 }],
+    ],
     providerImportSource: '@mdx-js/react',
     jsxImportSource: 'theme-ui',
   },
