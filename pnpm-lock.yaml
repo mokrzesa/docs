@@ -29,11 +29,9 @@ importers:
   packages/remark-lint-restrict-elements:
     specifiers:
       unified-lint-rule: ^2.1.1
-      unist-util-generated: ^2.0.1
       unist-util-visit: ^4.1.2
     dependencies:
       unified-lint-rule: 2.1.1
-      unist-util-generated: 2.0.1
       unist-util-visit: 4.1.2
 
   website:
