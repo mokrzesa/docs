@@ -7,8 +7,8 @@
     "build": "pnpm -r build",
     "start": "pnpm --filter @graphprotocol/docs start",
     "export": "pnpm --filter @graphprotocol/docs export",
-    "lint": "pnpm typecheck && eslint . --ext .js,.jsx,.ts,.tsx,.mjs --cache --max-warnings 0 && pnpm prettier:check",
-    "lint:fix": "pnpm typecheck; eslint . --ext .js,.jsx,.ts,.tsx,.mjs --fix; pnpm prettier; exit 0",
+    "lint": "pnpm typecheck && eslint . --cache --max-warnings 0 && pnpm prettier:check",
+    "lint:fix": "pnpm typecheck; eslint . --fix; pnpm prettier; exit 0",
     "typecheck": "pnpm --filter @graphprotocol/docs typecheck",
     "prettier": "prettier . --loglevel warn --write",
     "prettier:check": "prettier . --loglevel warn --check",
@@ -22,9 +22,13 @@
   "devDependencies": {
     "@edgeandnode/eslint-config": "^1.3.1",
     "eslint": "^8.36.0",
+    "eslint-plugin-mdx": "^2.0.5",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.6",
+    "remark-frontmatter": "^4.0.1",
+    "remark-lint-first-heading-level": "^3.1.1",
+    "remark-lint-no-multiple-toplevel-headings": "^3.1.1",
     "typescript": "5.0.2"
   },
   "lint-staged": {
