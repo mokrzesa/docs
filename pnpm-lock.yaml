@@ -12,7 +12,7 @@ importers:
       prettier: ^2.8.6
       remark-frontmatter: ^4.0.1
       remark-lint-first-heading-level: ^3.1.1
-      remark-lint-no-multiple-toplevel-headings: ^3.1.1
+      remark-lint-restrict-elements: workspace:*
       typescript: 5.0.2
     devDependencies:
       '@edgeandnode/eslint-config': 1.3.1_j4766f7ecgqbon3u7zlxn5zszu
@@ -23,8 +23,18 @@ importers:
       prettier: 2.8.6
       remark-frontmatter: 4.0.1
       remark-lint-first-heading-level: 3.1.1
-      remark-lint-no-multiple-toplevel-headings: 3.1.1
+      remark-lint-restrict-elements: link:packages/remark-lint-restrict-elements
       typescript: 5.0.2
+
+  packages/remark-lint-restrict-elements:
+    specifiers:
+      unified-lint-rule: ^2.1.1
+      unist-util-generated: ^2.0.1
+      unist-util-visit: ^4.1.2
+    dependencies:
+      unified-lint-rule: 2.1.1
+      unist-util-generated: 2.0.1
+      unist-util-visit: 4.1.2
 
   website:
     specifiers:
@@ -7806,18 +7816,6 @@ packages:
       unist-util-visit: 4.1.2
     dev: true
 
-  /remark-lint-no-multiple-toplevel-headings/3.1.1:
-    resolution: {integrity: sha512-bM//SIBvIkoGUpA8hR5QibJ+7C2R50PTIRrc4te93YNRG+ie8bJzjwuO9jIMedoDfJB6/+7EqO9FYBivjBZ3MA==}
-    dependencies:
-      '@types/mdast': 3.0.11
-      unified: 10.1.2
-      unified-lint-rule: 2.1.1
-      unist-util-generated: 2.0.1
-      unist-util-position: 4.0.4
-      unist-util-stringify-position: 3.0.3
-      unist-util-visit: 4.1.2
-    dev: true
-
   /remark-math/5.1.1:
     resolution: {integrity: sha512-cE5T2R/xLVtfFI4cCePtiRn+e6jKMtFDR3P8V3qpv8wpKjwvHoBA4eJzvX+nVrnlNy0911bdGmuspCSwetfYHw==}
     dependencies:
@@ -8566,7 +8564,6 @@ packages:
       trough: 2.1.0
       unified: 10.1.2
       vfile: 5.3.7
-    dev: true
 
   /unified/10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
@@ -8603,6 +8600,7 @@ packages:
     resolution: {integrity: sha512-kUBE91efOWfIVBo8xzh/uZQ7p9ffYRtUbMRZBNFYwf0RK8koUMx6dGUfwylLOKmaT2cs4wSW96QoYUSXAyEtpg==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: false
 
   /unist-util-remove-position/4.0.2:
     resolution: {integrity: sha512-TkBb0HABNmxzAcfLf4qsIbFbaPDvMO6wa3b3j4VcEzFVaw1LBKwnW4/sRJ/atSLSzoIg41JWEdnE7N6DIhGDGQ==}
